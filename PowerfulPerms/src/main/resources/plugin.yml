@@ -2,7 +2,7 @@ name: PowerfulPerms
 main: com.github.gustav9797.PowerfulPerms.PowerfulPerms
 version: ${version}
 author: gustav9797
-softdepend: [Vault]
+softdepend: [Vault, TimoCloud]
 load: startup
 
 commands:

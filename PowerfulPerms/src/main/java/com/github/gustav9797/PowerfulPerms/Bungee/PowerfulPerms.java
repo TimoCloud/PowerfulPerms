@@ -1,5 +1,6 @@
 package com.github.gustav9797.PowerfulPerms.Bungee;
 
+import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import com.github.gustav9797.PowerfulPerms.common.ChatColor;
 import com.github.gustav9797.PowerfulPerms.database.Database;
 import com.github.gustav9797.PowerfulPerms.database.DatabaseCredentials;
@@ -86,7 +87,9 @@ public class PowerfulPerms extends Plugin implements Listener, PowerfulPermsPlug
 
         DatabaseCredentials cred = new DatabaseCredentials(config.getString("host"), config.getString("database"), config.getInt("port"), config.getString("username"), config.getString("password"));
         Database db = new MySQLDatabase(new BungeeScheduler(this), cred, this, config.getString("prefix"));
-        permissionManager = new PowerfulPermissionManager(db, this, "BungeeCord");
+        String serverName = "BungeeCord";
+        if (TimoCloudAPI.isEnabled()) serverName = TimoCloudAPI.getBungeeInstance().getThisProxy().getGroup().getName();
+        permissionManager = new PowerfulPermissionManager(db, this, serverName);
         permissionManager.loadGroups(true);
         this.getProxy().getPluginManager().registerListener(this, this);
         this.getProxy().getPluginManager().registerListener(this, permissionManager);

@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -81,6 +82,7 @@ public class PowerfulPerms extends JavaPlugin implements Listener, PowerfulPerms
         IScheduler scheduler = new BukkitScheduler(this);
         Database db = new MySQLDatabase(scheduler, cred, this, getConfig().getString("prefix"));
         String serverName = getConfig().getString("servername");
+        if (TimoCloudAPI.isEnabled()) serverName = TimoCloudAPI.getBukkitInstance().getThisServer().getGroup().getName();
         permissionManager = new PowerfulPermissionManager(db, this, serverName);
         permissionManager.loadGroups(true);
         Bukkit.getPluginManager().registerEvents(permissionManager, this);
