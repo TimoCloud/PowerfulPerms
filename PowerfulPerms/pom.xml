@@ -53,6 +53,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <finalName>PowerfulPerms</finalName>
               <artifactSet>
                 <includes>
                   <include>org.apache.commons:commons-pool2</include>
