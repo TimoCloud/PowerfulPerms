@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/gustav9797/PowerfulPerms.svg?style=shield)](https://circleci.com/gh/gustav9797/PowerfulPerms) [![](https://jitpack.io/v/gustav9797/PowerfulPerms.svg)](https://jitpack.io/#gustav9797/PowerfulPerms)
+[![Build Status](http://jenkins.timo.cloud/job/PowerfulPerms/job/master/badge/icon)](http://jenkins.timo.cloud/job/PowerfulPerms/job/master/)
 
 # PowerfulPerms
 Next generation permission management, powering huge networks, max performance on any server.
